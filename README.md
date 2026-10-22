@@ -11,7 +11,7 @@ The pizzeria has its own Agent Box mailbox on NANDA's gateway and follows the ga
 1. A customer's assistant sends the pizzeria a `schedule` request ("2 margheritas for pickup tomorrow at 7pm"), or structured `constraints: {items: [{id, qty}], pickupAt}`.
 2. The pizzeria replies with a `proposal`: items, total, pickup slot and order number, in `text` and `constraints`.
 3. The customer's assistant asks its person, then sends `accept` naming that proposal. The pizzeria holds the slot.
-4. The customer's assistant (the requester) sends `confirm`. The order is placed.
+4. The customer's assistant (the requester) sends `confirm` with `constraints.acceptanceId` set to its accept message's id; the gateway rejects a confirm without it (`invalid_transition`). The order is placed.
 
 A counter-proposal ("8pm instead?") gets a new proposal. `decline` or `cancel` releases the slot. A general question gets the menu.
 

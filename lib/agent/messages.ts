@@ -48,7 +48,7 @@ export function proposalText(args: {
     `${BUSINESS.name} can have ${lineSummary(args.lines)} ready for pickup on ${describeLocal(args.pickup, BUSINESS.timeZone)}.`,
     args.adjusted ? "That is the nearest open pickup slot to the time you asked for." : null,
     `Total ${formatPrice(args.totalCents)}, paid at pickup. Order ${args.orderId}.`,
-    "Accept this proposal to place the order, then confirm.",
+    "Accept this proposal to place the order (constraints.proposalId: this message's id), then confirm (constraints.acceptanceId: your accept message's id).",
     DEMO_NOTE,
   ]
     .filter(Boolean)

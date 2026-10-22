@@ -13,7 +13,7 @@ export function GET() {
     "## Order through an agent",
     "",
     locator
-      ? `- Ordering agent: ${locator} (NANDA Agent Box). Send a schedule request such as "2 margheritas for pickup tomorrow at 7pm"; it answers with a proposal (items, total, pickup slot). Accept the proposal, then confirm.`
+      ? `- Ordering agent: ${locator} (NANDA Agent Box). Send a schedule request such as "2 margheritas for pickup tomorrow at 7pm"; it answers with a proposal (items, total, pickup slot). Accept the proposal (\`constraints.proposalId\`: the proposal's id), then confirm (\`constraints.acceptanceId\`: your accept message's id).`
       : "- Ordering agent: being set up.",
     `- [AI catalog](https://${BUSINESS.domain}/.well-known/ai-catalog.json): the agent's catalog entry.`,
     "",
